@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  font-family: Outfit, Helvetica, sans-serif;
+
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-row {
+  display: flex;
+  gap: 8px;
+  margin-left: 0px;
+  font-size: xx-medium;
+  height: 40px;
+  align-items: center;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  border-radius: 20px; /* More pill-shaped */
+  background: #ced1d5; /* Lighter background */
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-item.active {
+  background: #b7c3f3; /* Highlight color for active item */
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.nav-icon {
+  height: 18px;
+  width: 18px;
+  color: #333;
+}
+.nav-text{
+  color: grey;
+}
+
+.shadow-inner {
+  
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: #b7c3f3;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.);
+}
+
+.shadow-inner a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  font-size: small;
+
+}
+
+.cart-icon {
+  font-size: 1.3em;
+  color: #333;
+  cursor: pointer;
+}
