@@ -1,14 +1,16 @@
 import React from 'react';
 import './Footer.css'; // Make sure to create this CSS file
-import logo from '../assets/logo-pica.png'; // Update with your actual logo path
+import logo from '../assets/shadow_log-removebg-preview.png'; // Update with your actual logo path
 
 export const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <img src={logo} alt="Medingen Logo" className="footer-logo" />
-          <p className="footer-tagline">Saves you health and wealth</p>
+          <img src={logo} alt="Medingen Logo" className="footer-logo" style={{ width: '150px', height: '100px' }} />
+          <p className="footer-brand-name">Medingen</p>
+          <p className="footer-tagline" >Saves you health and <br />
+          wealth</p>
         </div>
 
         <div className="footer-links">
@@ -54,7 +56,7 @@ export const Footer: React.FC = () => {
       </div>
 
       <div className="footer-copyright">
-        <p>©2025 Medingen. All Rights Reserved</p>
+        <p> ©2025 Medingen. All Rights Reserved</p>
       </div>
     </footer>
   );
