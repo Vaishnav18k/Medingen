@@ -34,16 +34,6 @@ CREATE TABLE `description` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `description`
---
-
-LOCK TABLES `description` WRITE;
-/*!40000 ALTER TABLE `description` DISABLE KEYS */;
-INSERT INTO `description` VALUES (1,'About','Paracetamol is a common painkiller used to treat mild to moderate pain and reduce fever.',1);
-/*!40000 ALTER TABLE `description` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `product`
 --
 
@@ -62,16 +52,6 @@ CREATE TABLE `product` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product`
---
-
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'UDILIV 300MG TABLET 15\'S','Used to treat various conditions such as pain and fever.','Paracetamol','Cipla Ltd',25,20,' https://www.netmeds.com/images/product-v1/600x600/412620/udiliv_300mg_tablet_15s_3_0.jpg');
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `review`
@@ -93,16 +73,6 @@ CREATE TABLE `review` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `review`
---
-
-LOCK TABLES `review` WRITE;
-/*!40000 ALTER TABLE `review` DISABLE KEYS */;
-INSERT INTO `review` VALUES (1,5,'Best medicine for fever!','2025-05-27 11:55:28',1);
-/*!40000 ALTER TABLE `review` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `salt`
 --
 
@@ -119,16 +89,6 @@ CREATE TABLE `salt` (
   CONSTRAINT `salt_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `salt`
---
-
-LOCK TABLES `salt` WRITE;
-/*!40000 ALTER TABLE `salt` DISABLE KEYS */;
-INSERT INTO `salt` VALUES (1,'Paracetamol','Pain reliever and fever reducer.',1),(2,'Acetaminophen','Alternative name for Paracetamol.',1);
-/*!40000 ALTER TABLE `salt` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -139,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-27 19:09:04
+-- Dump completed on 2025-05-28 15:13:03

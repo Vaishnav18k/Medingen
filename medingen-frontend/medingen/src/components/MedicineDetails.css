@@ -1,0 +1,23 @@
+/* MedicineDetails.css */
+.medicine-details {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medicine-details h2 {
+  margin-bottom: 10px;
+}
+
+.medicine-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .medicine-details {
+    padding: 10px;
+  }
+}

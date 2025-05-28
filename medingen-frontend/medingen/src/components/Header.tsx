@@ -5,6 +5,7 @@ import img2 from '../assets/notifi-removebg-preview.png';
 import img3 from '../assets/profile-removebg-preview.png';
 import img4 from '../assets/shopping-cart.png'
 import { RiHome6Fill } from "react-icons/ri";
+import LogoutButton from './LogoutButton';
 
 export const Header = () => {
   return (
@@ -38,6 +39,7 @@ export const Header = () => {
       <div className="cart-icon-wrapper">
           <img src={img4} className="nav-icon" alt="Profile" />
       </div>
+       <LogoutButton />
     </header>
   );
 };

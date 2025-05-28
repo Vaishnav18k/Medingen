@@ -1,5 +1,5 @@
-// ReviewsSection.jsx
-
+// ReviewsSection.tsx
+import React from 'react';
 import './ReviewsSection.css';
 
 interface Review {
@@ -7,11 +7,11 @@ interface Review {
   comment: string;
 }
 
-interface ReviewsSectionProps {
+interface Props {
   reviews: Review[];
 }
 
-const ReviewsSection = ({ reviews }: ReviewsSectionProps) => {
+const ReviewsSection: React.FC<Props> = ({ reviews }) => {
   return (
     <section className="reviews-section">
       <h2>Ratings & Reviews</h2>

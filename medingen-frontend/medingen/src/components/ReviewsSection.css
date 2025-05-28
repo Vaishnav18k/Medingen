@@ -1,0 +1,45 @@
+/* ReviewsSection.css */
+.reviews-section {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews-section h2 {
+  margin-bottom: 10px;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.rating i {
+  color: gold;
+}
+
+.rating span {
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    padding: 10px;
+  }
+}

@@ -6,11 +6,15 @@ import datetime
 from functools import wraps
 from config import Config
 from model import db, Product, Salt, Review, Description
+from flask_cors import CORS
+
 
 
 app = Flask(__name__)
 app.config.from_object(Config)
 app.secret_key = Config.SECRET_KEY
+CORS(app, supports_credentials=True)
+
 
 # Initialize DB
 db.init_app(app)
@@ -29,17 +33,34 @@ def token_required(f):
         return f(*args, **kwargs)
     return decorated
 
-
 @app.route('/login', methods=['POST'])
 def login():
-    auth = request.get_json()
-    if auth.get('username') == 'admin' and auth.get('password') == 'password':
-        token = jwt.encode({
-            'user': auth['username'],
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
-        }, app.secret_key)
-        return jsonify({'token': token})
-    return jsonify({'error': 'Invalid credentials'}), 401
+    data = request.get_json()
+    print("Received login data:", data)  # Log what's coming in
+
+    if not data or data.get('username') != 'admin' or data.get('password') != 'password':
+        print("⚠️ Invalid credentials")
+        return jsonify({'message': 'Invalid credentials'}), 401
+
+    token = jwt.encode({
+        'user': data['username'],
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
+    }, app.config['SECRET_KEY'], algorithm='HS256')
+
+    print("✅ Login successful, returning token")  # Confirm success
+    return jsonify({'token': token})
+
+
+# @app.route('/login', methods=['POST'])
+# def login():
+#     auth = request.get_json()
+#     if auth.get('username') == 'admin' and auth.get('password') == 'password':
+#         token = jwt.encode({
+#             'user': auth['username'],
+#             'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
+#         }, app.secret_key)
+#         return jsonify({'token': token})
+#     return jsonify({'error': 'Invalid credentials'}), 401
 
 
 @app.route('/products', methods=['GET'])
@@ -79,6 +100,39 @@ def get_salts():
     } for s in salts])
 
 
+@app.route('/reviews', methods=['GET'])
+@token_required
+def get_reviews():
+    reviews = Review.query.all()
+    return jsonify([{
+        'id': r.id,
+        'product_id': r.product_id,
+        'rating': r.rating,
+        'comment': r.comment,
+        'created_at': r.created_at.isoformat() if r.created_at else None,
+        'product_name': r.product.name if r.product else None
+    } for r in reviews])
+
+
+@app.route('/descriptions', methods=['GET'])
+@token_required
+def get_descriptions():
+    descriptions = Description.query.all()
+    return jsonify([{
+        'id': d.id,
+        'product_id': d.product_id,
+        'title': d.title,
+        'content': d.content,
+        'product_name': d.product.name if d.product else None
+    } for d in descriptions])
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({'error': 'Not found'}), 404
+
+@app.errorhandler(500)
+def server_error(error):
+    return jsonify({'error': 'Server error'}), 500
 # Initialize DB on startup
 # @app.before_first_request
 # def create_tables():
@@ -119,5 +173,26 @@ if __name__ == '__main__':
     with app.app_context():
         create_tables_and_seed()
     app.run(debug=True)
+    import logging
+logging.basicConfig()
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 # print(app.config['SQLALCHEMY_DATABASE_URI'])
 # app.config.from_object(Config)
+
+
+
+
+
+# import requests
+
+# headers = {
+#     # Already added when you pass json=
+#     # 'Content-Type': 'application/json',
+# }
+
+# json_data = {
+#     'username': 'admin',
+#     'password': 'password',
+# }
+
+# response = requests.post('http://127.0.0.1:5000/login', headers=headers, json=json_data)

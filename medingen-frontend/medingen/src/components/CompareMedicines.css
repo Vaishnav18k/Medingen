@@ -1,0 +1,48 @@
+/* CompareMedicines.css */
+.compare-medicines {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.compare-medicines h2 {
+  margin-bottom: 10px;
+}
+
+.medicine-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.medicine-card {
+  background-color: #f0f2ff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+}
+
+.medicine-card img {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+
+.medicine-card h3 {
+  margin-bottom: 5px;
+}
+
+.medicine-card p {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .medicine-card {
+    width: 100%;
+  }
+}

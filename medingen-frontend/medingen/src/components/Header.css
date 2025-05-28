@@ -1,3 +1,4 @@
+/* Header.css */
 .header {
   display: flex;
   align-items: center;
@@ -11,9 +12,8 @@
   border-bottom: 1px solid #eaeaea;
   z-index: 1000;
   padding: 0 32px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   font-family: Outfit, Helvetica, sans-serif;
-  
 }
 
 .logo {
@@ -28,7 +28,7 @@
 }
 
 .brand-text {
-  font-size: 1.40em;
+  font-size: 1.4em;
   color: #222;
   font-weight: 300;
 }
@@ -43,7 +43,7 @@
 
 .nav-item {
   display: flex;
-  flex-direction: row; /* icon right of text */
+  flex-direction: row;
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
@@ -55,7 +55,7 @@
 
 .nav-item.active {
   background: #f0f2ff;
-  box-shadow: 0 2px 8px rgba(183,195,243,0.1);
+  box-shadow: 0 2px 8px rgba(183, 195, 243, 0.1);
   color: #000000;
 }
 
@@ -79,8 +79,46 @@
   height: 44px;
   background: #fff;
   border-radius: 40px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   margin-left: 44px;
-  margin-right: 44px; /* 12px gap from right edge */
+  margin-right: 44px;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    height: 60px;
+    padding: 0 16px;
+  }
+
+  .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-text {
+    font-size: 1.2em;
+  }
+
+  .nav-row {
+    gap: 4px;
+  }
+
+  .nav-item {
+    padding: 4px 8px;
+  }
+
+  .nav-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-text {
+    font-size: 12px;
+  }
+
+  .cart-icon-wrapper {
+    width: 36px;
+    height: 36px;
+  }
+}
