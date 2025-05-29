@@ -95,4 +95,4 @@ Edit
 This project is licensed under the MIT License. You are free to use, modify, and distribute this software with attribution.
 
 ✨ Acknowledgements
-Developed by Vaishnav K and  withh help of Qwen3 as part of a full-stack medical system project using modern JavaScript and Python frameworks.
+Developed by Vaishnav K and  with help of Qwen3 AI built with part of a full-stack medical system project using modern JavaScript and Python frameworks.
