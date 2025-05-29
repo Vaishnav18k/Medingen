@@ -120,4 +120,4 @@ This project is licensed under the [MIT License](LICENSE). You are free to use, 
 
 ## ✨ Acknowledgements
 
-Developed by Vaishnav K and with the help of Qwen3 AI team as part of a full-stack medical system project using modern JavaScript and Python frameworks.
+Developed by Vaishnav K and with the help of Qwen3 AI  with the part of a full-stack medicine web  application project using modern JavaScript and Python frameworks.
