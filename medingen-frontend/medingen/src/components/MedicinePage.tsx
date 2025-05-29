@@ -40,19 +40,25 @@ const MedicinePage = () => {
           apiClient.get('/reviews')
         ]);
 
+
+        console.log("Product:", productRes.data[0]);
+      console.log("Medicines:", medicinesRes.data.slice(1, 5));
+
         setProduct(productRes.data[0]);
         setMedicines(medicinesRes.data.slice(1, 5));
+        
         setFAQs(faqRes.data.filter((desc: { title: string }) => desc.title === 'FAQ'));
         setReviews(reviewRes.data);
 
       } catch (err) {
-        if (axios.isAxiosError(err)) {
-          console.error("Failed to load data", err.response?.data || err.message);
-        } else if (err instanceof Error) {
-          console.error("Failed to load data", err.message);
-        } else {
-          console.error("Failed to load data", err);
-        }
+        console.error("Failed to fetch medicines", err);
+        // if (axios.isAxiosError(err)) {
+        //   console.error("Failed to load data", err.response?.data || err.message);
+        // } else if (err instanceof Error) {
+        //   console.error("Failed to load data", err.message);
+        // } else {
+        //   console.error("Failed to load data", err);
+        // }
       } finally {
         setLoading(false);
       }
@@ -65,22 +71,22 @@ const MedicinePage = () => {
     if (loading) return <div className="load"><ClipLoader size={30} /></div>;
 
 
-  return (
-    <div className="app">
-      <Header />
-      <main>
-        {product && (
-          <>
-            <MedicineDetails product={product} />
-            <CompareMedicines medicines={medicines} />
-            <FAQSection FAQs={FAQs} />
-            <ReviewsSection reviews={reviews} />
-          </>
-        )}
-      </main>
-      <Footer />
-    </div>
-  );
+ return (
+  <div className="app">
+    <Header />
+    <main>
+      {product && (
+        <>
+          <MedicineDetails product={product} />
+          <CompareMedicines medicines={medicines || []} />
+          <FAQSection FAQs={FAQs} />
+          <ReviewsSection reviews={reviews} />
+        </>
+      )}
+    </main>
+    <Footer />
+  </div>
+);
 };
 
 export default MedicinePage;

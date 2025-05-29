@@ -26,4 +26,6 @@ export interface Medicine {
   price: number;
   discounted_price: number;
   image_url: string;
+  rating: number; // add this extra
+  reviews: { comment: string }[];
 }

@@ -1,10 +1,61 @@
 /* MedicineDetails.css */
+
+ .Heading{
+  /* padding: 0 0 70px ; */
+  margin-top: 200px;
+  margin-left: 230px;
+  width: 870px;
+  height: 60px;
+  padding: 6px;
+  justify-content: center;
+  background-color: rgba(192, 196, 196, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: inset;
+}
+.box-text{
+text-align: center;
+font-weight: 500;
+font-size: larger;
+}
+
+
+
 .medicine-details {
   background-color: #fff;
-  padding: 20px;
-  margin: 20px 0;
+  padding: 40px;
+  margin: 50px 0;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: Outfit, Arial, Helvetica, sans-serif;
+  width: 800px;
+  height: fit-content;
+  margin-left: 230px;
+  margin-top: 20px;
+  
+}
+
+
+
+.heading1{
+
+  width: 380px;
+  height: 40px;
+  padding: 6px;
+  justify-content: center;
+  color: black;
+  background-color: rgba(192, 196, 196, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  box-shadow: inset;
+}
+.box-text1{
+  text-align: start;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 3px  ;
+  /* padding-bottom: 20px; */
+  
 }
 
 .medicine-details h2 {
@@ -15,9 +66,14 @@
   list-style-type: disc;
   padding-left: 20px;
 }
-
+.ul-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
 @media (max-width: 768px) {
   .medicine-details {
     padding: 10px;
   }
 }
+

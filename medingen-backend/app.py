@@ -71,6 +71,11 @@ def get_products():
         'id': p.id,
         'name': p.name,
         'description': p.description,
+        # this is newly added code
+        'uses': ['Helps in dissolving gallstones.','Is used in the treatment of primary biliary cholangitis (PBC).','Aids in managing other cholestatic liver disorders.'
+,'Can be used to prevent gallstone formation.', 'Assists in improving liver function.'],
+        'howItWorks': ['Dosage for children: The dosage of UDILIV 30OMG TABLET 15`S for children depends on their body weight and the specific liver disorder being treated. It is typically prescribed by a pediatrician or gastroenterologist who will determine the appropriate dosage.', 'Dosage for Adults: The recommended dosage of UDILIV 30OMG TABLET 15`S for adults varies depending on the indication. For gallstone dissolution, the usual dose is 8-10 mg/kg body weight per day, divided into two to three doses. In the treatment of primary biliary cholangitis (PBC), the typical dose ranges from 13-15 mg/kg body weight per day, also divided into multiple doses. However, dosages may differ based on individual patient factors, and it is essential to follow the specific instructions provided by a healthcare professional.', 'Headache'],
+        # this is end of code
         'generic_name': p.generic_name,
         'manufacturer': p.manufacturer,
         'price': p.price,
