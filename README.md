@@ -1,15 +1,19 @@
+
 # Medingen
 
-Medingen is a full-stack medicine and management platform. This project uses a modern tech stack including Flask for the backend, React.js for the frontend, MySQL for the database, and JWT for secure authentication. It is optimized using Bun.js for fast frontend development.
+Medingen is a full-stack medicine web application and management platform. This project uses a modern tech stack including Flask for the backend, React.js for the frontend, MySQL for the database, and JWT for secure authentication. It is optimized using Bun.js for fast frontend development.
 
 ## 📁 Project Structure
 
+```
 Medingen-VAISHNAV.K/
 ├── medingen-backend/
-│ └── app.py
+│   └── app.py
 └── medingen-frontend/
-└── medingen/
+    └── medingen/
+```
 
+---
 
 ## 🚀 Tech Stack
 
@@ -30,6 +34,8 @@ Medingen-VAISHNAV.K/
 ### ⚡ Build Tool / Runtime
 - Bun.js
 
+---
+
 ## 🧠 Prerequisites
 
 Make sure the following are installed:
@@ -40,6 +46,7 @@ Make sure the following are installed:
 - [Bun.js](https://bun.sh/docs/installation)
 - pip (Python package installer)
 
+---
 
 ## 🛠️ Setup Instructions
 
@@ -48,38 +55,48 @@ Make sure the following are installed:
 1. Navigate to the backend folder:
    ```bash
    cd medingen-backend
-Install the required Python packages:
-(Include this if you have a requirements.txt, or list dependencies manually)
+   ```
 
-pip install flask flask-cors flask-mysqldb PyJWT
-Run the Flask backend:
+2. Install the required Python packages:
+   *(Include this if you have a `requirements.txt`, or list dependencies manually)*
+   ```bash
+   pip install flask flask-cors flask-mysqldb PyJWT
+   ```
 
-bash
-Copy
-Edit
-python app.py
-⚠️ Ensure your MySQL server is running and the Flask app is correctly connected to the database.
+3. Run the Flask backend:
+   ```bash
+   python app.py
+   ```
 
-🎨 Frontend
-Navigate to the frontend working directory:
+> ⚠️ Ensure your MySQL server is running and the Flask app is correctly connected to the database.
 
-cd medingen-frontend/medingen
-Install frontend dependencies:
+---
 
+### 🎨 Frontend
 
-bun install
-Start the development server:
+1. Navigate to the frontend working directory:
+   ```bash
+   cd medingen-frontend/medingen
+   ```
 
+2. Install frontend dependencies:
+   ```bash
+   bun install
+   ```
 
-bun run dev
-Make sure the backend API is running for the frontend to function properly.
+3. Start the development server:
+   ```bash
+   bun run dev
+   ```
 
-📦 Frontend Dependencies
+> Make sure the backend API is running for the frontend to function properly.
+
+---
+
+## 📦 Frontend Dependencies
+
 Below are the key dependencies used in the frontend:
-
-json
-Copy
-Edit
+```json
 {
   "@hugeicons/react": "^1.0.5",
   "axios": "^1.9.0",
@@ -91,8 +108,16 @@ Edit
   "react-router-dom": "^7.6.1",
   "react-spinners": "^0.17.0"
 }
-📜 License
-This project is licensed under the MIT License. You are free to use, modify, and distribute this software with attribution.
+```
 
-✨ Acknowledgements
-Developed by Vaishnav K and  with help of Qwen3 AI built with part of a full-stack medical system project using modern JavaScript and Python frameworks.
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE). You are free to use, modify, and distribute this software with attribution.
+
+---
+
+## ✨ Acknowledgements
+
+Developed by Vaishnav K and with the help of Qwen3 AI team as part of a full-stack medical system project using modern JavaScript and Python frameworks.
