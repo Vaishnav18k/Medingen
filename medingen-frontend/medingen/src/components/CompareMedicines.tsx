@@ -43,13 +43,12 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
             <span className='a2'>Generic Name: </span><p className='a3'>{medicine.generic_name || "Not available"}</p>
             <p className='a4'>Average Price: </p>
             <p className="a5">Rs.{medicine.price.toFixed(2)}</p>
-            <div className='a6-box'>
-              <div className='a6-box-1'>
-                Orginal Price:
+             <div className='price-box'>
+              <div className='price-label'>
+                Original Price  <span className='price-value'> Rs.{medicine.discounted_price}</span>
+              </div>
                 </div>
-                 <p>Rs.{medicine.discounted_price}</p>
-               </div>
-           
+
             <p>Chemical formation: CH02 || CH02</p>
 
             <div className="ratings">

@@ -52,19 +52,32 @@ CompareMedicines.css
 }
 .a5{
   margin: 4px 185px 5px 4px;
+  /* top right bottom left */
 }
-.a6-box{
-  width: 200px;
+.price-box {
+  padding: 5px;
+  width: 240px;
+  height: 30px;
   display: flex;
-  background-color: #fff;
-  backdrop-filter: blur(10)px;
-  border-radius: 12px;
-.a6-box-1{
-  padding: 20px;
+  align-items: center;
+  background-color: rgba(192, 196, 196, 0.3); /* More transparent (0.3 opacity) */
+  backdrop-filter: blur(10px); /* Fixed syntax and increased blur */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-radius: 12px; 
+  font-size: large;
+  border: 1px solid rgba(255, 255, 255, 0.7); /* Optional: subtle border for better visibility */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0); /* Optional: subtle shadow for depth */
 }
-p{
-  padding: 6px;
+
+.price-label {
+  padding: 5px 5px 5px 5px;
+  display: flex;
+  align-items: center;
 }
+
+.price-value {
+  font-weight: bold;
+  margin-left: 60px;
 }
 .medicine-card {
   background-color: #f9f9ff;
@@ -73,6 +86,7 @@ p{
   text-align: center;
   width: 250px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50)px;
   transition: transform 0.2s ease;
 }
 
