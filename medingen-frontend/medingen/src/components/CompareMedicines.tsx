@@ -1,64 +1,3 @@
-// // CompareMedicines.tsx
-// import React from 'react';
-// import './CompareMedicines.css';
-
-// interface Medicine {
-//   id: number;
-//   name: string;
-//   manufacturer: string;
-//   generic_name: string;
-//   price: number;
-//   discounted_price?: number;
-//   image_url: string;
-//   rating: number;
-//   reviews: { comment: string }[];
-// }
-
-// interface Props {
-//   medicines: Medicine[];
-// }
-
-// const CompareMedicines: React.FC<Props> = ({ medicines }) => {
-//   if (!medicines || medicines.length === 0) return null;
-
-//   return (
-//     <section className="compare-medicines">
-//       <h2>Compare Medicines</h2>
-//       <p>Compare medicines price composition to make your decision</p>
-
-//       <div className="medicine-cards">
-//         {medicines.map((medicine) => (
-//           <div key={medicine.id} className="medicine-card">
-//             <img 
-//   src={medicine.image_url || "https://via.placeholder.com/150 "} 
-//   alt={medicine.name} 
-// />
-//             <h3>{medicine.name}</h3>
-//             <p>By {medicine.manufacturer}</p>
-//             <p>Generic Name: {medicine.generic_name}</p>
-//             <p>Orginal Price: ₹{medicine.price.toFixed(2)}</p>
-//             <p>Chemical formation: CH02 || CH02</p>
-
-//             <div className="ratings">
-//               <span>Rating: {medicine.rating}/5</span>
-//               <span>Reviews: {medicine.reviews?.length || 0}</span>
-//             </div>
-
-//             {medicine.reviews?.[0]?.comment && (
-//               <p>"{medicine.reviews[0].comment}"</p>
-//             )}
-//           </div>
-//         ))}
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default CompareMedicines;
-
-
-
-
 // CompareMedicines.tsx
 import React from 'react';
 import './CompareMedicines.css';
@@ -85,19 +24,32 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
   return (
     <section className="compare-medicines">
       <h2>Compare Medicines</h2>
-      <p>Compare medicines price composition to make your decision</p>
+      <p>Compare medicines price composition to make<br>
+      </br> your decision</p>
 
       <div className="medicine-cards">
         {medicines.map((medicine) => (
           <div key={medicine.id} className="medicine-card">
             <img 
-  src={medicine.image_url || "https://via.placeholder.com/150   "} 
-  alt={medicine.name} 
-/>
+              src={medicine.image_url?.trim() || "https://via.placeholder.com/150"}  
+              alt={medicine.name || "Medicine"}
+              onError={(e) => {
+                e.currentTarget.src = "https://via.placeholder.com/150?text=No+Image";
+              }}
+            />
             <h3>{medicine.name}</h3>
-            <p>By {medicine.manufacturer}</p>
-            <p>Generic Name: {medicine.generic_name}</p>
-            <p>Orginal Price: ₹{medicine.price.toFixed(2)}</p>
+            <p className='a1'>By {medicine.manufacturer || "Unknown"}</p>
+           
+            <span className='a2'>Generic Name: </span><p className='a3'>{medicine.generic_name || "Not available"}</p>
+            <p className='a4'>Average Price: </p>
+            <p className="a5">Rs.{medicine.price.toFixed(2)}</p>
+            <div className='a6-box'>
+              <div className='a6-box-1'>
+                Orginal Price:
+                </div>
+                 <p>Rs.{medicine.discounted_price}</p>
+               </div>
+           
             <p>Chemical formation: CH02 || CH02</p>
 
             <div className="ratings">
@@ -105,8 +57,10 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
               <span>Reviews: {medicine.reviews?.length || 0}</span>
             </div>
 
-            {medicine.reviews?.[0]?.comment && (
+            {medicine.reviews && medicine.reviews.length > 0 && medicine.reviews[0]?.comment ? (
               <p>"{medicine.reviews[0].comment}"</p>
+            ) : (
+              <p>"Review not available"</p>
             )}
           </div>
         ))}

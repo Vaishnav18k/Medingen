@@ -1,10 +1,12 @@
 CompareMedicines.css
+
 .compare-medicines {
   background-color: #fff;
   padding: 20px;
   margin: 20px 0;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
 }
 
 .compare-medicines h2 {
@@ -16,8 +18,54 @@ CompareMedicines.css
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-}
 
+}
+.a1{
+  /* margin-right: 400px; */
+  text-align:start;
+  padding-left: 6px;
+  /* background-color: #f9f9ff;
+  backdrop-filter: blur(10)px; */
+  font-weight: 100;
+  font-size: large;
+}
+.a2{
+  /* text-align:start; */
+  /* padding: 5px; */
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 140px;
+}
+.a3{
+  text-align: start;
+  padding: 2px ;
+  margin: 5px 0px 3px 4px ;
+  /* top right bottom left */
+  font-weight:lighter ;
+  font-size: 12px;
+   
+}
+.a4{
+   margin: 15px 140px 0px 0px ;
+   font-weight: bold;
+   font-size: 12;
+}
+.a5{
+  margin: 4px 185px 5px 4px;
+}
+.a6-box{
+  width: 200px;
+  display: flex;
+  background-color: #fff;
+  backdrop-filter: blur(10)px;
+  border-radius: 12px;
+.a6-box-1{
+  padding: 20px;
+}
+p{
+  padding: 6px;
+}
+}
 .medicine-card {
   background-color: #f9f9ff;
   padding: 16px;
@@ -42,6 +90,8 @@ CompareMedicines.css
 .medicine-card h3 {
   font-size: 18px;
   margin: 10px 0;
+  text-align: start;
+  padding-left: 5px;
 }
 
 .medicine-card p {

@@ -55,23 +55,23 @@ const MedicinePage = () => {
 
       // Set main product
       setProduct(productRes.data[0]);
-
+      setMedicines(medicinesRes.data.slice(0, 5));
       // Clone the same product 4 times
-      const baseProduct = medicinesRes.data[0];
-      if (baseProduct) {
-        const duplicateProducts = Array.from({ length: 4 }, (_, i) => ({
-          ...baseProduct,
-          id: baseProduct.id + i + 1,
-          name: `${baseProduct.name} `, 
-          // - ${i + 2} before
-          price: Number((baseProduct.price * (1 + i * 0.1)).toFixed(2)),
-          rating: Math.min(5, baseProduct.rating + i * 0.2),
-          reviews: [{
-            comment: `Good alternative for pain - Version ${i + 2}`
-          }]
-        }));
-        setMedicines(duplicateProducts);
-      }
+      // const baseProduct = medicinesRes.data[0];
+      // if (baseProduct) {
+      //   const duplicateProducts = Array.from({ length: 4 }, (_, i) => ({
+      //     ...baseProduct,
+      //     id: baseProduct.id + i + 1,
+      //     name: `${baseProduct.name} `, 
+      //     // - ${i + 2} before
+      //     price: Number((baseProduct.price * (1 + i * 0.1)).toFixed(2)),
+      //     rating: Math.min(5, baseProduct.rating + i * 0.2),
+      //     reviews: [{
+      //       comment: `Good alternative for pain - Version ${i + 2}`
+      //     }]
+      //   }));
+      //   setMedicines(duplicateProducts);
+      // }
 
       setFAQs(faqRes.data.filter((desc: { title: string }) => desc.title === 'FAQ'));
       setReviews(reviewRes.data);
@@ -94,6 +94,9 @@ const MedicinePage = () => {
  return (
   <div className="app">
     <Header />
+      <div  className='medication-info'>
+     <p> &lt; Paracetamol/acetaminophen </p>
+    </div>
     <main>
       {product && (
         <>

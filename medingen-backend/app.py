@@ -129,8 +129,11 @@ def create_tables_and_seed():
         salt2 = Salt(name="Acetaminophen", description="Alternative name for Paracetamol.")
         salt3 = Salt(name="Ibuprofen", description="Nonsteroidal anti-inflammatory drug.")
         salt4 = Salt(name="Ibuprofen Lysine", description="Building block for making proteins in the body")
+        salt5 = Salt(name="Azithromycin", description="Macrolide antibiotic for bacterial infections.")
+        salt6 = Salt(name="Azithromycin Dihydrate", description="Hydrated form of Azithromycin for stability.")
         
-        db.session.add_all([salt1, salt2, salt3, salt4])
+        
+        db.session.add_all([salt1, salt2, salt3, salt4, salt5, salt6])
         db.session.commit()
 
         # Create products
@@ -156,16 +159,41 @@ def create_tables_and_seed():
             manufacturer="Dr. Reddy’s Laboratories",
             price=22.0,
             discounted_price=20.0,
-            image_url="https://via.placeholder.com/300x300?text=SUMO"
+            image_url="https://onemg.gumlet.io/l_watermark_346,w_480,h_480/a_ignore,w_480,h_480,c_fit,q_auto,f_auto/ixjxlsi9o4ermenm6i6t.jpg"
         )
-
+        combiflam = Product(
+            name="Combiflam Tablet",
+            description="Combination of Ibuprofen and Paracetamol for pain and inflammation.",
+            uses="Toothache,Arthritis Pain,Fever,Muscle Pain",
+            howItWorks="Ibuprofen reduces inflammation by inhibiting COX enzymes|Paracetamol reduces pain and fever|Synergistic effect for enhanced relief",
+            sideEffects="Stomach Upset,Dizziness,Nausea,Heartburn",
+            generic_name="Ibuprofen + Paracetamol",
+            manufacturer="Sanofi India Ltd",
+            price=30.0,
+            discounted_price=27.0,
+            image_url="https://drugstreet.in/wp-content/uploads/2023/12/1000046667.jpg"
+        )
+        zithromax = Product(
+            name="Zithromax 250 MG",
+            description="Antibiotic for treating bacterial infections.",
+            uses="Respiratory Infections,Skin Infections,Ear Infections,Sexually Transmitted Infections",
+            howItWorks="Inhibits bacterial protein synthesis|Effective against a wide range of bacteria|Typically taken once daily for 3-5 days",
+            sideEffects="Diarrhea,Nausea,Abdominal Pain,Headache",
+            generic_name="Azithromycin",
+            manufacturer="Pfizer Ltd",
+            price=70.0,
+            discounted_price=65.0,
+            image_url="https://dkud4u09qff41.cloudfront.net/Products/805193c8-9177-4305-b180-5360cd3fd2a5.jpeg"
+        )   
         # Add products to session
-        db.session.add_all([paracetamol, ibuprofen])
+        db.session.add_all([paracetamol, ibuprofen, combiflam, zithromax])
         db.session.commit()
 
         # Assign salts to products
         paracetamol.salts = [salt1, salt2]
         ibuprofen.salts = [salt3, salt4]
+        combiflam.salts = [salt1, salt3]
+        zithromax.salts = [salt5, salt6]
 
         # Create review and description
         review1 = Review(rating=5, comment="Best medicine for fever!", product_id=paracetamol.id)
