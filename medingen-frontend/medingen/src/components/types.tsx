@@ -8,6 +8,7 @@ export interface Product {
 }
 
 export interface Description {
+  id : number;
   title: string;
   content: string;
 }
@@ -18,14 +19,14 @@ export interface Review {
   created_at?: string;
 }
 
-export interface Medicine {
-  id: number;
-  name: string;
-  manufacturer: string;
-  generic_name: string;
-  price: number;
-  discounted_price: number;
-  image_url: string;
-  rating: number; // add this extra
-  reviews: { comment: string }[];
-}
+// export interface Medicine {
+//   id: number;
+//   name: string;
+//   manufacturer: string;
+//   generic_name: string;
+//   price: number;
+//   discounted_price: number;
+//   image_url: string;
+//   rating: number; // add this extra
+//   reviews: { comment: string }[];
+// }

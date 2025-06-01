@@ -21,9 +21,19 @@ import { ClipLoader } from 'react-spinners';
   price: number;
   discounted_price: number;
   image_url: string;
-  rating: number; // add this extra
-  reviews: { comment: string }[];
+  // rating: number; // add this extra
+  reviews: { comment: string, rating: number }[];
 }
+
+interface Description {
+  id: number;
+  title: string;
+  content: string;
+  product_id: number;
+}
+
+
+
 const apiClient = axios.create({
   baseURL: 'http://localhost:5000',
 });
@@ -39,14 +49,14 @@ apiClient.interceptors.request.use(config => {
 const MedicinePage = () => {
   const [product, setProduct] = useState(null);
   const [medicines, setMedicines] = useState<Medicine[]>([]);
-  const [FAQs, setFAQs] = useState([]);
+  const [descriptions, setDescriptions] = useState<Description[]>([]);
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
 
  useEffect(() => {
   const fetchData = async () => {
     try {
-      const [productRes, medicinesRes, faqRes, reviewRes] = await Promise.all([
+      const [productRes, medicinesRes, descriptionsRes, reviewRes] = await Promise.all([
         apiClient.get('/products'),
         apiClient.get('/products'),
         apiClient.get('/descriptions'),
@@ -72,8 +82,8 @@ const MedicinePage = () => {
       //   }));
       //   setMedicines(duplicateProducts);
       // }
-
-      setFAQs(faqRes.data.filter((desc: { title: string }) => desc.title === 'FAQ'));
+      setDescriptions(descriptionsRes.data.filter((desc: Description) => desc.product_id === 1));
+      // setFAQs(faqRes.data.filter((desc: { title: string }) => desc.title === 'FAQ'));
       setReviews(reviewRes.data);
 
     } catch (err) {
@@ -100,7 +110,7 @@ const MedicinePage = () => {
         <>
           <MedicineDetails product={product} />
           <CompareMedicines medicines={medicines || []} />
-          <FAQSection FAQs={FAQs} />
+          <FAQSection descriptions={descriptions} />
           <ReviewsSection reviews={reviews} />
         </>
       )}

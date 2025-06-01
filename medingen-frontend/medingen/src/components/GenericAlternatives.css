@@ -1,0 +1,107 @@
+/* GenericAlternatives.css */
+.generic-alternatives {
+  width: 300px;
+  padding: 20px;
+  /* background-color: #fff; */
+  /* border-radius: 8px; */
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  font-family: Outfit, Arial, Helvetica, sans-serif;
+}
+
+.generic-alternatives h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.alternative-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  min-height: max-content;
+  min-width: max-content;
+}
+
+.medicine-image {
+  width: 50px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 8px;
+}
+
+.alternative-info {
+  flex-grow: 1;
+}
+
+.alternative-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+}
+
+.alternative-company {
+  font-size: 12px;
+  color: #555;
+  margin: 2px 0;
+}
+
+.alternative-details {
+  font-size: 12px;
+  color: #777;
+  margin: 2px 0;
+  padding-bottom: 6px;
+}
+
+.alternative-price {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 2px 0;
+}
+
+.strikethrough-price {
+  font-size: 8px; /* Font size of 8px */
+  text-decoration: line-through; /* Strikethrough effect */
+}
+
+.discount {
+  font-size: 12px;
+  font-weight: normal;
+  width: 50px;
+  height: max-content;
+  border-radius: 12px;
+  background-color: #80ed99;
+  padding: 6px;
+}
+
+.discount {
+  color: black;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+button.MuiButton-contained.add-button {
+  min-width: 70px; /* Adjust width to fit "+Add" text */
+  height: 30px;
+  padding: 0px 12px; /* Reduce padding for a compact look */
+  font-size: 14px;
+  text-transform: none; /* Prevent uppercase text */
+  border-radius: 22px; /* Match the design */
+  background-color: #ffffff; /* Force white background */
+  border: 1px solid #151414; /* Add black outline */
+}
+
+button.MuiButton-contained.add-button:hover {
+  background-color: #f5f5f5; /* Slightly off-white on hover for a subtle effect */
+  border: 1px solid #151414; /* Maintain black outline on hover */
+}
+
+.text {
+  color: black;
+  font-weight: bold;
+}
