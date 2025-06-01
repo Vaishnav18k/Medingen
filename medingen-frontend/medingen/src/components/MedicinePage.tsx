@@ -94,9 +94,7 @@ const MedicinePage = () => {
  return (
   <div className="app">
     <Header />
-      <div  className='medication-info'>
-     <p> &lt; Paracetamol/acetaminophen </p>
-    </div>
+     
     <main>
       {product && (
         <>

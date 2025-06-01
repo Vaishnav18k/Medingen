@@ -1,8 +1,28 @@
 /* MedicineDetails.css */
 
+.medication-info {
+  /* max-width: 600px; */
+  /* margin: 20px 100px; */
+  padding: 10px;
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  /* background-color: #f9f9f9; */
+  /* backdrop-filter: blur(40)px; */
+  height: 40px;
+  width: fit-content;
+  margin-top: 80px;
+  margin-left: 220px;
+  p{
+    color: #2c3e50;  
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 1.2em;
+  font-family: monospace;
+}
+}
  .Heading{
   /* padding: 0 0 70px ; */
-  margin-top: 200px;
+  margin-top: 20px;
   margin-left: 230px;
   width: 870px;
   height: 60px;

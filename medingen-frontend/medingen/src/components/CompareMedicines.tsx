@@ -1,6 +1,7 @@
 // CompareMedicines.tsx
 import React from 'react';
 import './CompareMedicines.css';
+import Rating from '@mui/material/Rating';
 
 interface Medicine {
   id: number;
@@ -10,8 +11,8 @@ interface Medicine {
   price: number;
   discounted_price?: number;
   image_url: string;
-  rating: number;
-  reviews: { comment: string }[];
+  // ratings: { rating: number }[];
+  reviews: { comment: string, rating: number }[];
 }
 
 interface Props {
@@ -23,9 +24,11 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
 
   return (
     <section className="compare-medicines">
-      <h2>Compare Medicines</h2>
+      <div className='cm'>
+        <h2>Compare Medicines</h2>
       <p>Compare medicines price composition to make<br>
-      </br> your decision</p>
+      </br> your decision</p> </div>
+      
 
       <div className="medicine-cards">
         {medicines.map((medicine) => (
@@ -43,24 +46,49 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
             <span className='a2'>Generic Name: </span><p className='a3'>{medicine.generic_name || "Not available"}</p>
             <p className='a4'>Average Price: </p>
             <p className="a5">Rs.{medicine.price.toFixed(2)}</p>
-             <div className='price-box'>
-              <div className='price-label'>
+             <div className='price-box' >
+              <div className='price-label' >
                 Original Price  <span className='price-value'> Rs.{medicine.discounted_price}</span>
               </div>
                 </div>
-
-            <p>Chemical formation: CH02 || CH02</p>
-
-            <div className="ratings">
-              <span>Rating: {medicine.rating}/5</span>
-              <span>Reviews: {medicine.reviews?.length || 0}</span>
-            </div>
-
+                   <hr style={{ 
+    border: 'none',
+    height: '2px',
+    backgroundColor: 'rgba(192, 196, 196, 0.3)',
+    margin: '20px 3px', 
+    width:'245px'
+  }} />
+    <p className='a6'>Chemical formation: </p>  
+    <span className='a7'>CH02 || CH02</span>
+    
+    <div> <br></br> <span className='a8'>Rating & Review</span>
+      </div>
+      <div className="ratings">     
+  {medicine.reviews && medicine.reviews.length > 0 && medicine.reviews[0].rating ? (
+    <>
+      <Rating 
+        name={`rating-${medicine.id}` }
+        value={medicine.reviews[0].rating}
+        readOnly
+        precision={0.5}
+      />
+      <p className="r1">{medicine.reviews[0].rating}</p>
+    </>
+  ) : (
+    <>
+      <Rating name={`rating-${medicine.id}`} value={0} readOnly />
+      <p className="r1">0</p>
+    </>
+  )}
+</div>
+<div>
             {medicine.reviews && medicine.reviews.length > 0 && medicine.reviews[0]?.comment ? (
               <p>"{medicine.reviews[0].comment}"</p>
             ) : (
               <p>"Review not available"</p>
             )}
+          </div>
+
           </div>
         ))}
       </div>

@@ -16,6 +16,9 @@ interface Props {
 
 const MedicineDetails: React.FC<Props> = ({ product }) => {
   return (<>
+   <div  className='medication-info'>
+     <p> &lt; Paracetamol/acetaminophen </p>
+    </div>
   <div className='Heading'>
         <p className='box-text'>Medicine Details </p> </div> 
     <section className="medicine-details">
