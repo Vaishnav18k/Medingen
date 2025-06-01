@@ -1,6 +1,6 @@
-import React from 'react';
-import './FAQSection.css';
 
+import React, { useState } from 'react';
+import './FAQSection.css';
 
 // Define the Description interface
 interface Description {
@@ -16,32 +16,45 @@ interface Props {
 }
 
 const FAQSection: React.FC<Props> = ({ descriptions }) => {
+  // State to manage FAQ section expansion
+  const [isExpanded, setIsExpanded] = useState(false);
+
   // Filter descriptions for a specific product_id (e.g., 1 for Paracetamol)
   const productDescriptions = descriptions.filter(description => description.product_id === 1);
+
+  // Toggle expansion state
+  const toggleFAQ = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   return (
     <section className="faq-container">
       <div className="faq-section">
         <h2>
           Frequently Asked Questions for Paracetamol
-          <span className="faq-icon"></span>
+          <span
+            className={`faq-icon ${isExpanded ? 'expanded' : ''}`}
+            onClick={toggleFAQ}
+            role="button"
+            aria-expanded={isExpanded}
+            aria-label="Toggle FAQ section"
+          >
+            ▼
+          </span>
         </h2>
-       
       </div>
-       <br></br>
-      <div className="faq-section-1">
+      
+      <div className={`faq-section-1 ${isExpanded ? 'visible' : 'hidden'}`}>
+        <h3>Paracetamol</h3>
         {productDescriptions.length > 0 ? (
           productDescriptions.map(({ title, content }, index) => (
             <div key={index} className="faq-item">
-              <p className="faq-question">
-                <span className="faq-prefix">Q.</span> {title}
-               <p className="faq-answer"> {content}</p>
-              </p>
-              
+              <div className="faq-question">Q. {title}</div>
+              <div className="faq-answer">{content}</div>
             </div>
           ))
         ) : (
-          <p>No FAQs available for this product.</p>
+          <div className="no-faqs">No FAQs available for this product.</div>
         )}
       </div>
     </section>
