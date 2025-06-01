@@ -3,13 +3,13 @@ CompareMedicines.css
 .compare-medicines {
   background-color: #fff;
   padding: 20px;
-  margin: 20px 0;
+  margin: 20px 0px;
   border-radius: 8px ;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .cm{
   /* padding: 0px, px, 0px 250px ; */
-  margin-left: 230px;
+  margin-left: 60px;
 }
 
 .compare-medicines h2 {
@@ -20,7 +20,10 @@ CompareMedicines.css
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: start;
+  margin-left: 60px;
+  /* margin-left: 80px;  */
+  /* above line illa da vaishnav check out compare ku medicine detail */
 
 }
 .a1{

@@ -72,7 +72,7 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
         readOnly
         precision={0.5}
       />
-      <p className="r1">{medicine.reviews[0].rating}</p>
+      <p className="r1">{medicine.reviews[0].rating}.0</p>
     </>
   ) : (
     <>
