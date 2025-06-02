@@ -69,18 +69,19 @@ const ReviewsSection: React.FC<Props> = ({ reviews }) => {
         {productReviews.map((review) => (
           <div key={review.id} className="single-review">
             <div className="rating-container">
-              <Rating
-                name={`rating-${review.id}`}
-                value={review.rating}
-                readOnly
-                precision={0.5}
-                size="large"
-              />
-              <span className="rating-number">{review.rating.toFixed(1)}</span>
-            </div>
+  <Rating
+    name={`rating-${review.id}`}
+    value={review.rating}
+    readOnly
+    precision={0.5}
+    size="large"
+  />
+  <span className="rating-number">{review.rating.toFixed(1)}</span>
+</div> <>
             <p className="comment">
               {review.comment ? review.comment : "Review not available"}
             </p>
+            </>
           </div>
         ))}
       </div>

@@ -1,16 +1,14 @@
+/* FAQ Section - Responsive Enhancement */
 .faq-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 50px;
+  margin: 40px 315px 0 60px;
   padding: 20px;
   font-family: Outfit, Helvetica, sans-serif;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 60px;
-  margin-right: 315px;
-  margin-top: 40px;
 }
 
 .faq-section h2 {
@@ -19,6 +17,7 @@
   color: #333;
   margin: 0;
   text-align: left;
+  white-space: nowrap; /* Prevent title wrapping */
 }
 
 .faq-icon {
@@ -26,7 +25,8 @@
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-left: 590px; /* Added space between title and icon */
+  margin-left: 690px; /* Replaced fixed margin with auto */
+  padding-left: 20px; /* Added padding instead of fixed margin */
 }
 
 .faq-icon.expanded {
@@ -34,15 +34,12 @@
 }
 
 .faq-section-1 {
-  margin: 0 80px;
+  margin: 20px 315px 0 60px;
   padding: 30px;
   font-family: Arial, sans-serif;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 60px;
-  margin-right: 315px;
-  margin-top: 20px;
   max-height: 1000px;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -74,9 +71,83 @@
   font-weight: normal;
   color: #555;
   margin-bottom: 0;
+  line-height: 1.5; /* Improved readability */
 }
 
 .no-faqs {
   font-weight: normal;
   color: #555;
+}
+
+/* Responsive Additions (Without Changing Desktop Behavior) */
+@media (max-width: 1600px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 200px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 150px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 100px;
+    margin-left: 40px;
+  }
+}
+
+@media (max-width: 992px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 60px;
+    margin-left: 30px;
+  }
+  
+  .faq-section h2 {
+    white-space: normal; /* Allow title to wrap */
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 30px;
+    margin-left: 20px;
+    padding: 15px;
+  }
+  
+  .faq-section-1 {
+    padding: 20px;
+  }
+  
+  .faq-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .faq-section,
+  .faq-section-1 {
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 12px;
+  }
+  
+  .faq-section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .faq-question {
+    font-size: 0.95rem;
+  }
+  
+  .faq-answer {
+    font-size: 0.9rem;
+  }
 }

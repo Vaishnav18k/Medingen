@@ -102,12 +102,21 @@
   text-align: center;
   border-top: 1px solid #444;
   font-size: 14px;
-  color: #fff;
+  /* color: #ced4da; */
+  background-color: rgba(192, 196, 196, 0.1);
+  backdrop-filter: blur(10px);
   padding: 20px 0;
   margin-right: 35px;
   width: 100%;
   font-weight: 300;
-  margin-top: 0px;
+  margin-top: 20px;
+  height: 20px;
+  
+  margin-bottom: 20px;
+}
+.foot-border{
+  border-top: 1px solid #444;
+  
 }
 
 @media (max-width: 768px) {

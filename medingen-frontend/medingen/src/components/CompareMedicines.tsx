@@ -65,20 +65,20 @@ const CompareMedicines: React.FC<Props> = ({ medicines }) => {
       </div>
       <div className="ratings">     
   {medicine.reviews && medicine.reviews.length > 0 && medicine.reviews[0].rating ? (
-    <>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Rating 
-        name={`rating-${medicine.id}` }
+        name={`rating-${medicine.id}`}
         value={medicine.reviews[0].rating}
         readOnly
         precision={0.5}
       />
       <p className="r1">{medicine.reviews[0].rating}.0</p>
-    </>
+    </div>
   ) : (
-    <>
+    <div style={{ display: 'flex', alignItems: 'center' }}>
       <Rating name={`rating-${medicine.id}`} value={0} readOnly />
       <p className="r1">0</p>
-    </>
+    </div>
   )}
 </div>
 <div>

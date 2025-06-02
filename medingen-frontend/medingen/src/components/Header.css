@@ -84,15 +84,64 @@
   margin-right: 30px;
 }
 
-.button{
+.button {
   margin-right: 44px;
 }
 
-/* Responsive Styles */
+/* Enhanced Responsive Styles */
+@media (max-width: 1366px) {
+  /* Adjustments for smaller desktop screens */
+  .header {
+    padding: 0 24px;
+  }
+  
+  .nav-row {
+    gap: 6px;
+  }
+  
+  .nav-item {
+    padding: 6px 12px;
+  }
+  
+  .cart-icon-wrapper {
+    margin-left: 24px;
+    margin-right: 16px;
+  }
+  
+  .button {
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Tablet-like sizes */
+  .brand-text {
+    display: none; /* Hide text on medium screens */
+  }
+  
+  .nav-text {
+    display: none; /* Hide nav text, keep icons */
+  }
+  
+  .nav-item {
+    padding: 8px;
+  }
+  
+  .cart-icon-wrapper {
+    margin-left: 16px;
+    margin-right: 8px;
+  }
+}
+
+/* Header.css - with corrected mobile layout */
+/* ... (keep all your existing desktop styles) ... */
+
 @media (max-width: 768px) {
+  /* Mobile styles */
   .header {
     height: 60px;
     padding: 0 16px;
+    justify-content: space-between; /* Ensure logo and icons stay at edges */
   }
 
   .logo img {
@@ -101,32 +150,89 @@
   }
 
   .brand-text {
+    display: inline;
     font-size: 1.2em;
   }
 
+  /* Main navigation row - now at bottom */
   .nav-row {
-    gap: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    justify-content: space-around;
+    padding: 0 8px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+    gap: 0; /* Remove gap for equal spacing */
   }
 
   .nav-item {
-    padding: 4px 8px;
+    padding: 6px 8px;
+    flex-direction: column;
+    border-radius: 12px;
+    gap: 2px;
+    flex: 1; /* Make items expand equally */
+    max-width: 25%; /* Limit width to fit 4 items */
+    justify-content: center;
+    text-align: center;
   }
 
   .nav-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  .nav-text {
-    font-size: 12px;
-  }
-
-  .cart-icon-wrapper {
-    width: 36px;
-    height: 36px;
-  }
-  .button {
     width: 26px;
     height: 26px;
   }
+
+  .nav-text {
+    display: block;
+    font-size: 10px;
+  }
+
+  /* Move cart/notification into the bottom nav */
+  .cart-icon-wrapper {
+    width: 36px;
+    height: 36px;
+    margin: 0; /* Remove desktop margins */
+    order: 1; /* Ensure it's part of the flex flow */
+    box-shadow: none; /* Optional: reduce prominence on mobile */
+    background: transparent;
+  }
+
+  /* Button adjustments */
+  .button {
+    margin-right: 0;
+    order: 2; /* Position in nav row */
+    /* If you want it as a separate nav item: */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 8px;
+  }
+
+  /* Hide desktop-specific elements if needed */
+  .header .cart-icon-wrapper,
+  .header .button {
+    display: none;
+  }
+
+  /* Show these elements in the bottom nav instead */
+  .nav-row .cart-icon-wrapper,
+  .nav-row .button {
+    display: flex;
+  }
 }
+
+@media (max-width: 480px) {
+  /* Further small screen adjustments */
+  .nav-text {
+    font-size: 9px;
+  }
+  
+  .nav-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+

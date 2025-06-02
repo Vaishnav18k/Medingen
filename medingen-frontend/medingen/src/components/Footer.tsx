@@ -58,6 +58,9 @@ export const Footer: React.FC = () => {
       <div className="footer-copyright">
         <p> ©2025 Medingen. All Rights Reserved</p>
       </div>
+      <div className='foot-border'>
+
+      </div>
     </footer>
   );
 };

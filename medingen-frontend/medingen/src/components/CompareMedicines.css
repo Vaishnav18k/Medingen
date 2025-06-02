@@ -1,14 +1,17 @@
-CompareMedicines.css
+/* CompareMedicines.css - Enhanced Responsive Version */
 
 .compare-medicines {
   background-color: #fff;
   padding: 20px;
-  margin: 20px 0px;
-  border-radius: 8px ;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+  /* border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+  max-width: 1400px;
+  /* margin-left: auto; */
+  margin-right: 60px;
 }
-.cm{
-  /* padding: 0px, px, 0px 250px ; */
+
+.cm {
   margin-left: 60px;
 }
 
@@ -20,95 +23,19 @@ CompareMedicines.css
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: start;
-  margin-left: 60px;
-  /* margin-left: 80px;  */
-  /* above line illa da vaishnav check out compare ku medicine detail */
-
-}
-.a1{
-  /* margin-right: 400px; */
-  text-align:start;
-  padding-left: 6px;
-  /* background-color: #f9f9ff;
-  backdrop-filter: blur(10)px; */
-  font-weight: 100;
-  font-size: large;
-}
-.a2{
-  /* text-align:start; */
-  /* padding: 5px; */
-  font-weight: bold;
-  font-size: 14px;
-  margin-right: 140px;
-}
-.a3{
-  text-align: start;
-  padding: 2px ;
-  margin: 5px 0px 3px 4px ;
-  /* top right bottom left */
-  font-weight:lighter ;
-  font-size: 12px;
-   
-}
-.a4{
-   margin: 15px 140px 0px 0px ;
-   font-weight: bold;
-   font-size: 12;
-}
-.a5{
-  margin: 6px 185px 20px 4px;
-  /* top right bottom left */
-}
-.price-box {
-  padding: 5px;
-  width: 240px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  background-color: rgba(192, 196, 196, 0.3); /* More transparent (0.3 opacity) */
-  backdrop-filter: blur(10px); /* Fixed syntax and increased blur */
-  -webkit-backdrop-filter: blur(10px); /* For Safari support */
-  border-radius: 12px; 
-  font-size: large;
-  border: 1px solid rgba(255, 255, 255, 0.7); /* Optional: subtle border for better visibility */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0); /* Optional: subtle shadow for depth */
-}
-.a6{
-  margin: 15px 100px 0px 0px ;
-   font-weight: bold;
-   font-size: 14;
-   color:#555;
-}
-.a7{
-  margin: 30px 133px 0px 0px ;
-   font-weight: bolder;
-   font-size: 16;
-   color:black;
-}
-.a8{
-  margin: 10px 115px 4px 0px;
-}
-.price-label {
-  padding: 5px 5px 5px 5px;
-  display: flex;
-  align-items: center;
-}
-
-.price-value {
-  font-weight: bold;
+  justify-content: flex-start;
   margin-left: 60px;
 }
 
+/* Medicine card styles */
 .medicine-card {
   background-color: #f9f9ff;
   padding: 16px;
   border-radius: 8px;
-  text-align: center;
   width: 260px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(50)px;
   transition: transform 0.2s ease;
+  position: relative;
 }
 
 .medicine-card:hover {
@@ -120,6 +47,7 @@ CompareMedicines.css
   max-width: 150px;
   height: auto;
   margin-bottom: 10px;
+  object-fit: contain;
 }
 
 .medicine-card h3 {
@@ -129,40 +57,235 @@ CompareMedicines.css
   padding-left: 5px;
 }
 
-.medicine-card p {
+/* Text utility classes */
+.a1 {
+  text-align: start;
+  padding-left: 6px;
+  font-weight: 100;
+  font-size: large;
+}
+
+.a2 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 140px;
+}
+
+.a3 {
+  text-align: start;
+  padding: 2px;
+  margin: 5px 0 3px 4px;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+.a4 {
+  margin: 15px 140px 0 0;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.a5 {
+  margin: 6px 185px 20px 4px;
+}
+
+.a6 {
+  margin: 15px 100px 0 0;
+  font-weight: bold;
   font-size: 14px;
   color: #555;
 }
 
-.ratings {
-  
+.a7 {
+  margin: 30px 133px 0 0;
+  font-weight: bolder;
+  font-size: 16px;
+  color: black;
+}
+
+.a8 {
+  margin: 10px 115px 4px 0;
+}
+
+/* Price box styles */
+.price-box {
+  padding: 5px;
+  width: 240px;
+  height: 30px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(192, 196, 196, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  font-size: large;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.price-label {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.price-value {
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+/* Ratings styles */
+.ratings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;
   font-size: 16px;
-  margin-left: 5px;
 }
-.ratings .MuiRating-root { font-size: 1.9rem; }
-.ratings .MuiRating-icon { margin-right: 6px;}
+
+.ratings .MuiRating-root { 
+  font-size: 1.9rem; 
+}
+
+.ratings .MuiRating-icon { 
+  margin-right: 6px;
+}
+
 .r1 {
   border-radius: 5px;
   width: fit-content;
   height: fit-content;
-  padding: 3px 13px ;
-  background-color: rgba(150, 150, 150, 0.5); /* Darker, more opaque */
-  margin: 0px 2px 0px 0px ;
+  padding: 3px 13px;
+  background-color: rgba(150, 150, 150, 0.5);
+  margin: 0 2px 0 0;
   line-height: 1.5;
   font-weight: bold;
-  text-decoration: black;
+}
+
+/* Responsive Styles */
+@media (max-width: 1366px) {
+  .compare-medicines {
+    padding: 20px 40px;
+  }
+  
+  .cm, .medicine-cards {
+    margin-left: 40px;
+  }
+  
+  .medicine-card {
+    width: 240px;
+  }
+  
+  .price-box {
+    width: 220px;
+  }
+  
+  .a2, .a4 {
+    margin-right: 100px;
+  }
+  
+  .a7 {
+    margin-right: 100px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cm, .medicine-cards {
+    margin-left: 30px;
+  }
+  
+  .medicine-cards {
+    justify-content: center;
+  }
+  
+  .medicine-card {
+    width: 220px;
+  }
+  
+  .price-box {
+    width: 200px;
+  }
+  
+  .a2, .a4 {
+    margin-right: 80px;
+  }
+  
+  .a5 {
+    margin-right: 150px;
+  }
+  
+  .a7 {
+    margin-right: 80px;
+  }
 }
 
 @media (max-width: 768px) {
-  .medicine-cards {
-    flex-direction: column;
-    align-items: center;
+  .compare-medicines {
+    padding: 15px;
   }
-
+  
+  .cm, .medicine-cards {
+    margin-left: 0;
+    justify-content: center;
+  }
+  
   .medicine-card {
-    width: 90%;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .price-box {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+  
+  .a2, .a4, .a6, .a7, .a8 {
+    margin-right: 0;
+  }
+  
+  .a5 {
+    margin-right: 0;
+  }
+  
+  .medicine-card h3,
+  .a1, .a2, .a3, .a4,
+  .a6, .a7, .a8 {
+    text-align: center;
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .compare-medicines {
+    padding: 10px;
+  }
+  
+  .medicine-card {
+    padding: 12px;
+  }
+  
+  .a1 {
+    font-size: medium;
+  }
+  
+  .a2, .a4, .a6 {
+    font-size: 13px;
+  }
+  
+  .a3 {
+    font-size: 11px;
+  }
+  
+  .a7 {
+    font-size: 14px;
+  }
+  
+  .price-box {
+    height: 28px;
+    font-size: medium;
+  }
+  
+  .ratings .MuiRating-root {
+    font-size: 1.5rem;
   }
 }

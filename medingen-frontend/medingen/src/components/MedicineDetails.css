@@ -1,6 +1,5 @@
-/* MedicineDetails.css */
+/* MedicineDetails.css - Enhanced Responsive Version */
 
-/* Add this to the existing CSS */
 .container {
   display: flex;
   justify-content: space-between;
@@ -46,8 +45,8 @@
   height: 60px;
   padding: 6px;
   justify-content: center;
-  background-color: rgba(192, 196, 196, 0.7);
-  backdrop-filter: blur(20px);
+  background-color: rgba(192, 196, 196,0.3);
+  backdrop-filter: blur(50px);
   border-radius: 10px;
   box-shadow: inset;
 }
@@ -76,7 +75,7 @@
   padding: 6px;
   justify-content: center;
   color: black;
-  background-color: rgba(192, 196, 196, 0.7);
+  background-color: rgba(192, 196, 196, 0.3);
   backdrop-filter: blur(20px);
   border-radius: 10px;
   box-shadow: inset;
@@ -104,19 +103,113 @@
   margin-top: 10px;
 }
 
+/* Enhanced Responsive Styles */
+@media (max-width: 1366px) {
+  .container {
+    margin-right: auto;
+    padding: 20px 40px;
+  }
+  
+  .left-section {
+    margin-right: 80px;
+  }
+  
+  .right-section {
+    margin-right: 0;
+  }
+  
+  .Heading {
+    width: 100%;
+    max-width: 870px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 20px 30px;
+  }
+  
+  .left-section {
+    margin-right: 40px;
+  }
+  
+  .right-section {
+    width: 280px;
+  }
+  
+  .heading1 {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 15px;
+    margin-right: 0;
+  }
+
+  .left-section {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
   }
 
   .right-section {
     width: 100%;
-    margin-left: 0;
+    margin: 30px 0 0 0;
+  }
+
+  .medication-info {
     margin-top: 20px;
   }
 
-  .medicine-details {
+  .Heading {
+    width: 100%;
+    height: auto;
     padding: 10px;
-    margin-left: 0;
+  }
+
+  .medicine-details {
+    padding: 20px;
+    margin: 15px 0;
+  }
+
+  .heading1 {
+    width: 100%;
+    height: auto;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .medication-info p {
+    font-size: 1em;
+  }
+  
+  .Heading {
+    height: auto;
+    padding: 8px;
+  }
+  
+  .box-text {
+    font-size: medium;
+  }
+  
+  .medicine-details {
+    padding: 15px;
+  }
+  
+  .heading1 {
+    padding: 6px;
+  }
+  
+  .box-text1 {
+    font-size: 12px;
   }
 }
